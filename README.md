@@ -14,7 +14,6 @@ Step into the role of a hotel manager and build your very own Hotel Simulator! Y
 -Includes a total count of all guests checked in
 -Includes a message that shows if no guests are checked in. Left this in since I had it that way intially as thinking it would be a handy feature to have, but then saw the assignment requirements mentioned "prepopulating the guest list" and thought that it meant we needed to have pre-exisiting guests listed. Left the function and message in to show thought process.
 
-
 ### Requirements
 -HTML layout includes both the Check-In Form and Guest List section
 -CSS provides a clean, user-friendly design
@@ -29,6 +28,27 @@ Step into the role of a hotel manager and build your very own Hotel Simulator! Y
 - styles.css
 - .gitignore
 - README.md - this file
+
+## Testing Checklist
+- [ ] Page loads with prepopulated guests visible.
+- [ ] Form blocks negative numbers, decimals, and empty fields.
+- [ ] Trying to reuse a room shows the error message.
+- [ ] After a valid submit, form clears and list updates without duplicates.
+- [ ] No errors in the browser console.
+
+## Accessibility Notes
+Trying to keep learning about Aria, so googled some best practices and inserted them where I thought they were fitting. 
+
+## How to Use
+1. Open the live site.
+2. You’ll see pre-existing guests on page load.
+3. Add a new guest via the Check-In Form:
+   - Guest Name (text)
+   - Room Number (whole number ≥ 1)
+   - Stay Duration (whole number ≥ 1)
+4. If the room is already assigned, an error message appears.  
+5. Once checked in successfully, the guest appears as a card below in the guest list with the entered values and the total count updates.
+
 
 ## GitHub links
 [Link to GitHub Repository](https://github.com/ellamkoch/hotel-simulator/tree/dev)
