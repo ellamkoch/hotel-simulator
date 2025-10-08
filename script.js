@@ -11,9 +11,11 @@ const guestListEmpty = document.getElementById('guestListEmpty');
 const guestListCount = document.getElementById('guestListCount');
 const guestListCountValue = document.getElementById('guestListCountValue');
 
-
-// declaring states possible - these start empty as it'll be initialized later
-const guests = [];  
+// Pre-existing guests
+const guests = [
+  new Guest('Bob Dole', 101, 3),
+  new Guest('Jane Fonda', 102, 5),
+];
 
 //Constructors
 
@@ -24,7 +26,8 @@ function Guest(name, room, duration) {
     this.duration = duration;
 }
 
- // Function to show checked in guests
+
+// Function to show checked in guests
 function checkedInGuests() {
     guestListCards.innerHTML = '';
 
