@@ -1,11 +1,8 @@
-/*style reset*/
-
-
 /* headings */
 h1, h2,
 .guest_list_heading,
 .checkin {
-  font-family: "Arvo", serif;  /* have to name font-family to get Arvo to work*/
+  font-family: "Arvo", serif;  /* have to name font-family and "" to get Google font to work*/
   font-weight: 700;            /* 400 = regular, 700 = bold */
   text-shadow: 0 1px 2px rgba(0,0,0,0.25);
   text-align: left;
@@ -99,8 +96,27 @@ body {
 /* input focus style */
 .checkin_form_field_input:focus {
     border-color: #751686;
-    outline: #751686;
-    outline-offset: 10px;
+    outline: 1px solid #751686;
+    
+}
+/* Styles for valid/invald data in checkin form*/
+
+/* Show success once the field has a value and passes HTML5 rules */
+.checkin_form_field_input:required:valid {
+    box-shadow: 0 0 0 3px rgba(25,135,84,.12);
+    background-color: lightgreen;
+}
+
+/* Show error only after the user starts typing (hides on empty placeholder) */
+.checkin_form_field_input:required:invalid:not(:placeholder-shown) {
+    box-shadow: 0 0 0 3px rgba(176,0,32,.12);
+    background-color: lightcoral;
+}
+
+#guestName:valid, /*makes it so this field is ignored by validation*/
+#guestName:invalid {
+    background-color: white;
+
 }
 
 /* submit & reset button styles */
@@ -130,13 +146,14 @@ body {
 
 .checkin_form_reset {
     background-color:#e9f1e8;
-    color: #751686 ;
+    color: #751686;
    
 }
 
 /* hover and active states for buttons */
 .checkin_form_submit:hover {
-    background-color: #7516868a;
+    background-color: #e9f1e8;
+    color: #751686;
     transform: scale(1.05); /*slightly enlarges button on hover*/
 }
 
@@ -182,6 +199,7 @@ body {
 .guest_list_cards {
     display: flex;
     flex-wrap: wrap;
+    gap: 15px;
 }
 
 /* styles for guest cards*/
@@ -196,7 +214,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(88, 84, 84, 0.607);
     min-width: 150px;
-    gap: 15px;
+    
 
 }
 
@@ -208,9 +226,8 @@ body {
 .guest_card_text {
     margin-top: 0;
     line-height: 1.3;
+    margin: 3px;
 }
-
-
 
 
 /* Arvo CSS classes */
