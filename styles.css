@@ -1,0 +1,239 @@
+/*style reset*/
+
+
+/* headings */
+h1, h2,
+.guest_list_heading,
+.checkin {
+  font-family: "Arvo", serif;  /* have to name font-family to get Arvo to work*/
+  font-weight: 700;            /* 400 = regular, 700 = bold */
+  text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  text-align: left;
+}
+
+
+/* Main Container Styles*/
+.checkin_heading_advice, .checkin_form, .guest_list_container {
+    background-color: rgba(214, 243, 128, 0.97); 
+    display: flex;
+    flex-direction: column; /*stacks items vertically*/
+    align-items: flex-start;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(88, 84, 84, 0.607);
+    width: 100%; /*full width on small screens*/
+    max-width: 800px;
+    gap: 10px;
+
+}
+
+.checkin_heading_advice, .checkin_form, .guest_list_container {
+    margin: 10px auto;
+}
+
+.checkin_heading_advice h1 {
+  margin: 0 0 6px;            
+  line-height: 1.1; 
+}
+
+.checkin_heading_advice .advice p {
+  margin: 4px 0; 
+  line-height: 1.5;        
+}
+
+.checkin_form h2 {
+    margin: 0 0 6px;              
+    line-height: 1.1;
+
+}
+
+.guest_list_container h2 {
+    margin: 0;      
+    line-height: 1.1;
+
+}
+
+/* body styles */
+body {
+    font-family: Roboto, sans-serif;
+    /*What makes the fun trippy background work*/
+    background-color: #ffd2f7;
+    opacity: 1;
+    background: linear-gradient(135deg, #76168655 25%, transparent 25%) -40px 0/ 80px 80px, linear-gradient(225deg, #761686 25%, transparent 25%) -40px 0/ 80px 80px, linear-gradient(315deg, #76168655 25%, transparent 25%) 0px 0/ 80px 80px, linear-gradient(45deg, #761686 25%, #ffd2f7 25%) 0px 0/ 80px 80px;
+    color: #222;  
+}
+
+.advice {
+    font-size: 18px;
+
+}
+
+/*checkin form container */
+
+
+/* individual form fields */
+.checkin_form_field {
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    gap: 5px;
+    
+}
+/* labels for form fields */
+
+.checkin_form_field_label {
+    font-size: 16px;
+    font-weight: bold;
+
+}
+/* input fields style */
+.checkin_form_field_input {
+    border: solid 1px gray;
+    padding: 8px;
+    border-radius: 5px;
+
+}
+
+
+/* input focus style */
+.checkin_form_field_input:focus {
+    border-color: #751686;
+    outline: #751686;
+    outline-offset: 10px;
+}
+
+/* submit & reset button styles */
+
+/*container for buttons*/
+.checkin_buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.checkin_form_submit, .checkin_form_reset {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /*transitions background color smoothly*/
+    gap: 10px;
+
+}
+
+/* colors for buttons*/
+.checkin_form_submit {
+  background-color:#751686;
+    color: white;
+}
+
+.checkin_form_reset {
+    background-color:#e9f1e8;
+    color: #751686 ;
+   
+}
+
+/* hover and active states for buttons */
+.checkin_form_submit:hover {
+    background-color: #7516868a;
+    transform: scale(1.05); /*slightly enlarges button on hover*/
+}
+
+.checkin_form_submit:active {
+    background-color: #a869b4;
+    transform: scale(0.95); /*slightly shrinks button on click*/
+}
+
+.checkin_form_reset:hover {
+    background-color: #a869b4;
+    transform: scale(1.05); /*slightly enlarges button on hover*/
+    color: white;
+}
+
+.checkin_form_reset:active {
+    background-color: #7516868a;
+    transform: scale(0.95); /*slightly shrinks button on click*/
+}
+
+/* Error Message*/
+
+.error_message {
+    display: none; /*js will make this appear as needed*/
+    color: red;
+    font-size: 20px;
+
+}
+
+/*Guest List Container*/
+
+.guest_list_empty {
+    width: 100%;
+    gap: 5px;
+
+}
+
+.guest_list_count {
+    display: none; /*only shows when guests are checked in*/
+    font-weight: 700;
+    font-size: 18px
+}
+
+.guest_list_cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* styles for guest cards*/
+.guest_card {
+    display: none; /*hidden initally. js will bring it out as guests are checked in*/
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(88, 84, 84, 0.607);
+    min-width: 150px;
+    gap: 15px;
+
+}
+
+.guest_card_title {
+    line-height: 1.3;
+    margin: 3px;
+}
+
+.guest_card_text {
+    margin-top: 0;
+    line-height: 1.3;
+}
+
+
+
+
+/* Arvo CSS classes */
+.arvo-regular {
+  font-family: "Arvo", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.arvo-bold {
+  font-family: "Arvo", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.arvo-regular-italic {
+  font-family: "Arvo", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.arvo-bold-italic {
+  font-family: "Arvo", serif;
+  font-weight: 700;
+  font-style: italic;
+}

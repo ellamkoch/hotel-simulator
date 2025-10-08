@@ -3,58 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to the Simulated Hotel!</title>
-    
+    <title>Simulated Hotel Reservations</title>
+   
+     <!-- Arvo Google Font embed-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
     <!--Styles-->
     <link rel="stylesheet" href="./styles.css">
+   
 </head>
 <body>
     <main>
-        <h1 class="intro">Welcome to the Simulated Hotel!</h1>
-        <p>Remember to enter all guest information fully when checking in a guest.</p>
-        <p>If you need help, reach out to a coworker or a supervisor. If none are available, consult the manual.</p>
+        <!-- H1 container and advice-->
+        <div class="checkin_heading_advice">
+        <h1 class="intro">Simulated Hotel Reservations</h1>
+            <div class="advice">
+                <p>Remember to enter all guest information fully when checking in a guest.</p>
+                <p>If you need help, reach out to a coworker or a supervisor. If none are available, consult the "How To" manual.</p>
+            </div>
+        </div>
         <!-- Checkin Form container-->
         <form action="" class ="checkin_form" id="checkin_form">
         <h2 class="checkin">Check-In Form</h2> 
-            <div class="checkin_form_row">
+            
                 <!--Guest Name-->
                 <div class="checkin_form_field">
                     <label for="guestName" class="checkin_form_field_label">Guest Name:</label>
-                    <input type="text" id="guestName" name="guestName" class="checkin_form_field_input" required>
+                    <input type="text" id="guestName" name="guestName" class="checkin_form_field_input" required placeholder="Enter guest name">
                 </div>
                 
                 <!--Room Number-->
                 <div class="checkin_form_field">
                     <label for="roomNumber" class="checkin_form_field_label">Room Number:</label>
-                    <input type="number" id="roomNumber" name="roomNumber" class="checkin_form_field_input" required>
+                    <input type="number" id="roomNumber" name="roomNumber" class="checkin_form_field_input" required placeholder="Enter room number">
                 </div>
                 
                 <!--Stay Duration-->
                 <div class="checkin_form_field">
                     <label for="stayDuration" class="checkin_form_field_label">Stay Duration:</label>
-                    <input type="number" id="stayDuration" name="stayDuration" class="checkin_form_field_input" required>
+                    <input type="number" id="stayDuration" name="stayDuration" class="checkin_form_field_input" required min="1" placeholder="Enter number of days">
                 </div>
+            
+            <!--Submit & Reset Buttons-->
+            <div class="checkin_buttons">
+                <button class="checkin_form_submit" type="submit">Check-In</button>
+                <button class="checkin_form_reset" type="reset">Reset Form</button>
             </div>
+            <!-- Inserted by JS when errors occur. hidden otherwise-->
+            <div id="error_message" class="error_message" aria-live="polite" role="status" aria-atomic="true"></div>
         </form>
 
         <!-- Guest List container-->
-        <h2 class="guestlist">Guest List</h2>
-        <div id="guest_list_container" class="guest_list_container">
-            <div id="guest_list_cards" class="guest_list_cards">
+        
+        <!--Region tells screen-readers that this area is a "landmark" navigation. 
+         'aria-labelledby' ties the name of the region to the <h2 id="guest_list_heading"> below. -->
+        <div id="guest_list_container"
+            class="guest_list_container"
+            role="region"
+            aria-labelledby="guest_list_heading">
 
+        <h2 class="guest_list_heading" id="guest_list_heading">Guest List</h2>
 
+        <!-- Empty state: shown until there are guests -->
+        <p class="guest_list_empty" id="guest_list_empty">No guests yet — check in someone to get started.</p>
 
-
-                
-            </div>
-
+        <!-- Count line: <span> wraps just the number so JS can update it -->
+        <div class="guest_list_count" id="guest_list_count"> Total guests checked in: <span id="guest_list_count_value">0</span>
         </div>
+
+        <!-- Cards get inserted here by JS -->
+        <div id="guest_list_cards" class="guest_list_cards" role="list" aria-live="polite">
+            <!-- JS will insert one .guest_card (role="listitem") per guest -->
+             <!-- TEMP for styling only -->
+            <div class="guest_card" role="listitem">
+            <h3 class="guest_card_title">John Doe</h3>
+            <p class="guest_card_text">Room: 101</p>
+            <p class="guest_card_text">Stay: 3 days</p>
+            </div>
+        </div>
+        </div>
+
 
         
 
 
 
     </main>
+    <div class="background">
+        
+    </div>
     <!-- JavaScript-->
     <script src="./script.js"></script>
 </body>
