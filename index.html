@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulated Hotel Reservations</title>
+   
+     <!-- Arvo Google Font embed. Has to be before CSS so it will be used-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <!--Styles-->
+    <link rel="stylesheet" href="./styles.css">
+   
+</head>
+<body>
+    <main>
+        <!-- H1 container and advice-->
+        <div class="checkin_heading_advice">
+        <h1 class="intro">Simulated Hotel Reservations</h1>
+            <div class="advice">
+                <p>Remember to enter all guest information fully when checking in a guest.</p>
+                <p>If you need help, reach out to a coworker or a supervisor. If none are available, consult the "How To" manual.</p>
+            </div>
+        </div>
+        <!-- Checkin Form container-->
+        <form action="" class ="checkin_form" id="checkinForm" role="region" aria-labelledby="checkInHeading">
+        <h2 id="checkInHeading" class="checkinH2">Check-In Form</h2> 
+            
+                <!--Guest Name-->
+                <div class="checkin_form_field">
+                    <label for="guestName" class="checkin_form_field_label">Guest Name:</label>
+                    <input type="text" id="guestName" name="guestName" class="checkin_form_field_input" required placeholder="Enter guest name">
+                </div>
+                
+                <!--Room Number-->
+                <div class="checkin_form_field">
+                    <label for="roomNumber" class="checkin_form_field_label">Room Number:</label>
+                    <input type="number" id="roomNumber" name="roomNumber" class="checkin_form_field_input" required min="1" placeholder="Enter room number">
+                </div>
+                <!-- the min="1" tells the page that the default number that can be entered has to be a whole number. If a decimal or negative # is entered, validation will occur. -->
+                <!--Stay Duration-->
+                <div class="checkin_form_field">
+                    <label for="stayDuration" class="checkin_form_field_label">Stay Duration:</label>
+                    <input type="number" id="stayDuration" name="stayDuration" class="checkin_form_field_input" required min="1" placeholder="Enter number of days">
+                </div>
+            
+            <!--Submit & Reset Buttons-->
+            <div class="checkin_buttons">
+                <button class="checkin_form_submit" type="submit">Check-In</button>
+                <button class="checkin_form_reset" type="reset">Reset Form</button>
+            </div>
+            <!-- Inserted by JS when errors occur. hidden otherwise-->
+            <div id="errorMessage" class="error_message" aria-live="polite" role="status" aria-atomic="true"></div>
+        </form>
+
+        <!-- Guest List container-->
+        
+        <!--Region tells screen-readers that this area is a "landmark" navigation. Landmarks provide a way to identify groups of links, or in this case an area of the page for a specific use.
+         'aria-labelledby' ties the name of the region to the <h2 id="guest_list_heading"> below. -->
+        <div id="guestListContainer"
+            class="guest_list_container"
+            role="region"
+            aria-labelledby="guestListHeading">
+
+        <h2 class="guest_list_heading" id="guestListHeading">Guest List</h2>
+
+        <!-- Empty state: shown until there are guests -->
+        <p class="guest_list_empty" id="guestListEmpty">No guests yet — check in someone to get started.</p>
+
+        <!-- Count line: <span> adds an id to the Guest count, so I can update the # with JS, but not change anything else. -->
+        <div class="guest_list_count" id="guestListCount"> Total guests checked in: <span id="guestListCountValue">0</span>
+        </div> 
+
+        <!-- Cards get inserted here by JS -->
+        <div id="guestListCards" class="guest_list_cards" role="list" aria-live="polite">
+            <!-- the role list tells the screenreader to annouce these as a list once they're shown. Polite tells it to annonce when there is no interaction from the user-->
+            <!-- JS will insert one .guest_card (role="listitem") per guest -->
+            
+            
+        </div>
+        </div>
+
+
+        
+
+
+
+    </main>
+   
+    <!-- JavaScript-->
+    <script src="./script.js"></script>
+</body>
+</html>
