@@ -11,8 +11,7 @@ Step into the role of a hotel manager and build your very own Hotel Simulator! Y
 -Guest List Display — dynamically shows all checked-in guests as cards
 -Pre-Loaded Guests — renders an initial list from a JavaScript array
 -Constructor Function used to create each Guest object
--Includes a total count of all guests checked in
--Includes a message that shows if no guests are checked in. Left this in since I had it that way intially as thinking it would be a handy feature to have, but then saw the assignment requirements mentioned "prepopulating the guest list" and thought that it meant we needed to have pre-exisiting guests listed. Left the function and message in to show thought process.
+
 
 ### Requirements
 -HTML layout includes both the Check-In Form and Guest List section
@@ -28,6 +27,10 @@ Step into the role of a hotel manager and build your very own Hotel Simulator! Y
 - styles.css
 - .gitignore
 - README.md - this file
+
+## Additional Features Added
+-Includes a total count of all guests checked in
+-Includes a message that shows if no guests are checked in. Left this in since I had it that way intially as thinking it would be a handy feature to have, but then saw the assignment requirements mentioned "prepopulating the guest list" and thought that it meant we needed to have pre-exisiting guests listed. Left the function and message in to show thought process.
 
 ## Testing Checklist
 - [ ] Page loads with prepopulated guests visible.
